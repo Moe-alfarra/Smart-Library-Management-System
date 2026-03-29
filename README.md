@@ -91,7 +91,7 @@ Project Structure
 
 Smart-Library-Management-System
 
-    frontend/
+    Smart-Library-Management-System-frontend/
         src/
         package.json
         vite.config.js
@@ -103,7 +103,6 @@ Smart-Library-Management-System
         mvnw
         ...
 
-    README.txt
 
 
 System Architecture
