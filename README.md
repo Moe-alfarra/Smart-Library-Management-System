@@ -109,13 +109,13 @@ Smart-Library-Management-System
 System Architecture
 -------------------
 
-Client (React Frontend)
+    Client (React Frontend)
         |
         v
-Spring Boot REST API (Controller Layer -> Service Layer -> Repository Layer)
+    Spring Boot REST API (Controller Layer -> Service Layer -> Repository Layer)
         |
         v
-PostgreSQL Database
+    PostgreSQL Database
 
 
 Running the Project Locally
