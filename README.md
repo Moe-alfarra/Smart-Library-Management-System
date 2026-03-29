@@ -62,6 +62,7 @@ Borrowing System
 - Automatic due date tracking (14 days due date for each borrow)
 - Late return status tracking ($2 late fee per day)
 - Fine calculation support (Calculates and displays total fine for late returns)
+- Borrowing status tracking (BORROWED, RETURNED, LATE)
 
 Renewal System
 - Borrowed books can be renewed (if no reservations OR if reservations are satisfied and copies are available)
