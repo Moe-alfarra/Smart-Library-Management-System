@@ -1,0 +1,126 @@
+-- ============================================
+-- USERS TABLE
+-- ============================================
+
+CREATE TABLE users (
+    user_id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL CHECK (role IN ('ADMIN','MEMBER')),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- ============================================
+-- BOOKS TABLE
+-- ============================================
+
+CREATE TABLE books (
+    book_id BIGSERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    author VARCHAR(255) NOT NULL,
+    isbn VARCHAR(255) UNIQUE NOT NULL,
+    total_copies INTEGER NOT NULL,
+    available_copies INTEGER NOT NULL,
+    category VARCHAR(255) NOT NULL DEFAULT 'GENERAL',
+    is_deleted BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+-- ============================================
+-- BOOK TAGS TABLE
+-- ============================================
+
+CREATE TABLE book_tags (
+    book_id BIGINT NOT NULL,
+    tag VARCHAR(255),
+    PRIMARY KEY (book_id, tag),
+    CONSTRAINT fk_book_tags_book
+        FOREIGN KEY (book_id)
+        REFERENCES books(book_id)
+        ON DELETE CASCADE,
+    CONSTRAINT book_tags_tag_check CHECK (
+        tag IN (
+            'BESTSELLER',
+            'NEW_ARRIVAL',
+            'STAFF_PICK',
+            'TRENDING',
+            'AWARD_WINNER',
+            'CLASSIC',
+            'MOVIE_ADAPTATION',
+            'HIDDEN_GEM',
+            'POPULAR',
+            'RECOMMENDED'
+        )
+    )
+);
+
+
+-- ============================================
+-- BORROW RECORDS TABLE
+-- ============================================
+
+CREATE TABLE borrow_records (
+    borrow_record_id BIGSERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    book_id BIGINT NOT NULL,
+    borrow_date TIMESTAMP NOT NULL,
+    due_date TIMESTAMP NOT NULL,
+    return_date TIMESTAMP,
+    status VARCHAR(50) NOT NULL CHECK (
+        status IN ('BORROWED','RETURNED','LATE')
+    ),
+    renewal_count INTEGER DEFAULT 0,
+    fine_amount NUMERIC(10,2),
+
+    CONSTRAINT fk_borrow_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_borrow_book
+        FOREIGN KEY (book_id)
+        REFERENCES books(book_id)
+        ON DELETE CASCADE
+);
+
+
+-- ============================================
+-- RESERVATIONS TABLE
+-- ============================================
+
+CREATE TABLE reservations (
+    reservation_id BIGSERIAL PRIMARY KEY,
+    user_id BIGINT NOT NULL,
+    book_id BIGINT NOT NULL,
+    reservation_date TIMESTAMP NOT NULL,
+    status VARCHAR(50) NOT NULL CHECK (
+        status IN ('ACTIVE','FULFILLED','CANCELLED')
+    ),
+
+    CONSTRAINT fk_reservation_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_reservation_book
+        FOREIGN KEY (book_id)
+        REFERENCES books(book_id)
+        ON DELETE CASCADE
+);
+
+
+-- ============================================
+-- INDEXES (FOR PERFORMANCE)
+-- ============================================
+
+CREATE INDEX idx_books_title ON books(title);
+CREATE INDEX idx_books_author ON books(author);
+CREATE INDEX idx_books_is_deleted ON books(is_deleted);
+
+CREATE INDEX idx_reservations_book ON reservations(book_id);
+CREATE INDEX idx_reservations_user ON reservations(user_id);
+
+CREATE INDEX idx_borrow_user_book ON borrow_records(user_id, book_id);
