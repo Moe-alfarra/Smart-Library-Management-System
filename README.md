@@ -32,6 +32,10 @@ Book Management
 - Restore deleted books (ADMIN)
 - Permanently delete books (ADMIN)
 <img width="1899" height="909" alt="image" src="https://github.com/user-attachments/assets/caad90e7-3d3e-408e-82cb-36dc5c0a3364" />
+<img width="1904" height="907" alt="image" src="https://github.com/user-attachments/assets/fac69d1e-7fbd-4e1f-af22-d72034504c51" />
+
+<img width="1901" height="905" alt="image" src="https://github.com/user-attachments/assets/fbacfe8b-53a9-49ae-9355-677e86c04997" />
+<img width="1906" height="911" alt="image" src="https://github.com/user-attachments/assets/58ee1679-05f4-4519-ab43-37577cc8bc49" />
 
 Categories and Tags
 - Book categorization
