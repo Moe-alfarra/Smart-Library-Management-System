@@ -11,6 +11,7 @@ The system is built using a modern web stack with a React modern frontend UI, a 
 
 This project demonstrates full-stack development, REST API design, authentication and authorization, and database management.
 
+Hosted Frontend: https://smart-library-management-system-swart.vercel.app/
 
 Main Features
 -------------
