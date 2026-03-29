@@ -41,8 +41,9 @@ public class AuthController {
 
     // Admin Register
     @PostMapping("/admin/create")
+    @PreAuthorize("hasRole('ADMIN')") // Protected only owner admin can create other admins through Postman or db insert directly
     public ResponseEntity<String> createAdmin(@RequestBody RegisterRequest request) {
-        // You should protect this endpoint in Spring Security for admins only
+
         authService.createAdmin(request.getName(), request.getEmail(), request.getPassword());
         return ResponseEntity.status(HttpStatus.CREATED).body("Admin created successfully");
     }
