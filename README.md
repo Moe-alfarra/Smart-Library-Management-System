@@ -7,7 +7,7 @@ The Smart Library Management System is a full-stack web application designed to 
 It allows users to browse books, borrow and return them, renew borrows, reserve unavailable books, and manage their accounts. 
 Administrators can manage books, monitor borrowing activity, and control the overall system.
 
-The system is built using a modern web stack with a React frontend, a Java Spring Boot backend, and a PostgreSQL database.
+The system is built using a modern web stack with a React modern frontend UI, a Java Spring Boot backend, and a PostgreSQL database.
 
 This project demonstrates full-stack development, REST API design, authentication and authorization, and database management.
 
