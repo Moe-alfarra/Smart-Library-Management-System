@@ -131,11 +131,10 @@ cd Smart-Library-Management-System
 Create a PostgreSQL database before  running the backend (NOTE: Refer to the DB Design and Schema)
  
 You should have 5 tables:
-
-Core Entities: users, books
-Borrowing System: borrow_records (connects users with books many-to-many [M-N])
-Reservation System: reservations (connects users with books many-to-many [M-N])
-Book Metadata: book_tags (assigns tags to specific books 1-to-many [1-M]) 
+- Core Entities: users, books
+- Borrowing System: borrow_records (connects users with books many-to-many [M-N])
+- Reservation System: reservations (connects users with books many-to-many [M-N])
+- Book Metadata: book_tags (assigns tags to specific books 1-to-many [1-M]) 
 
 Update the backend configuration file:
 
@@ -144,7 +143,9 @@ Smart-Library-Management-System-Backend/src/main/resources/application.propertie
 Example configuration:
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
+
 spring.datasource.username=postgres
+
 spring.datasource.password=yourpassword
 
 
