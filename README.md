@@ -46,6 +46,7 @@ Categories and Tags
 <img width="1907" height="910" alt="image" src="https://github.com/user-attachments/assets/60de2a34-9133-4256-b019-25d2ff605e8c" />
 
 
+
 Borrowing System
 - Borrow available books (Max. 5 Active borrows)
 - Return borrowed books (Can return before due date)
@@ -56,14 +57,16 @@ Borrowing System
 Renewal System
 - Borrowed books can be renewed (if no reservations OR if reservations are satisfied and copies are available)
 - Renewal limits enforced (Max. 2 renewals per borrow)
-<img width="1910" height="912" alt="image" src="https://github.com/user-attachments/assets/9bf6161d-1990-4554-aa80-3e38bc41ba90" />
+
 
 Reservation System
 - Reserve books when they are unavailable (Max. 3 Active Reservations)
 - Queue-based reservation system (First user gets priority to borrow when book copies become available)
 - Reservation status tracking (ACTIVE, FULFILLED, CANCELLED)
+<img width="1910" height="912" alt="image" src="https://github.com/user-attachments/assets/9bf6161d-1990-4554-aa80-3e38bc41ba90" />
 <img width="1904" height="909" alt="image" src="https://github.com/user-attachments/assets/be412b27-9e4a-4873-a2c7-e0a08cd9fe5f" />
 <img width="1909" height="904" alt="image" src="https://github.com/user-attachments/assets/514d33fa-8a1c-4e6d-bbd2-6360ad3c2682" />
+
 
 
 User Management
@@ -75,6 +78,7 @@ User Management
 <img width="1917" height="905" alt="image" src="https://github.com/user-attachments/assets/0866398f-85c4-4a02-ab68-25c8503f36ef" />
 <img width="1899" height="907" alt="image" src="https://github.com/user-attachments/assets/9d2fd510-6858-4339-ab82-51f33bd60131" />
 <img width="1443" height="690" alt="image" src="https://github.com/user-attachments/assets/8451febc-0783-4ae9-96f8-97c27e45efd5" />
+<img width="1912" height="904" alt="image" src="https://github.com/user-attachments/assets/9276454f-8979-430b-9c50-3b85cce553dd" />
 
 
 Technology Stack
