@@ -187,48 +187,34 @@ http://localhost:5173
 API Overview
 ------------
 
-Authentication
+    Smart-Library-Management-System-frontend/
+    Authentication
+    
+    POST /api/auth/login
+    POST /api/auth/member/register
 
-POST /api/auth/login
+    Books
+    POST /api/books
+    GET /api/books/id/{id}
+    GET /api/books/isbn/{isbn}
+    GET /api/books/categories
+    GET /api/books/category/{category}
+    GET /api/books/tag/{tag}
 
-POST /api/auth/member/register
+    Borrow Records
+    POST /api/borrow-records
+    PUT /api/borrow-records/{id}/return
+    GET /api/borrow-records/user/{userId}
 
-Books
+    Renewal 
+    PUT /api/borrow-records/{borrowId}/renew
 
-POST /api/books
+    Reservations
+    POST /api/reservations
+    DELETE /api/reservations/{id}
 
-GET /api/books/id/{id}
-
-GET /api/books/isbn/{isbn}
-
-GET /api/books/categories
-
-GET /api/books/category/{category}
-
-GET /api/books/tag/{tag}
-
-Borrow Records
-
-POST /api/borrow-records
-
-PUT /api/borrow-records/{id}/return
-
-GET /api/borrow-records/user/{userId}
-
-Renewal 
-
-PUT /api/borrow-records/{borrowId}/renew
-
-Reservations
-
-POST /api/reservations
-
-DELETE /api/reservations/{id}
-
-Users
-
-GET /api/users/id/{id}
-
+    Users
+    GET /api/users/id/{id}
 
 Deployment Notes
 ----------------
