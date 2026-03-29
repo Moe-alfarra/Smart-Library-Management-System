@@ -31,6 +31,7 @@ Book Management
 - Soft delete books (ADMIN)
 - Restore deleted books (ADMIN)
 - Permanently delete books (ADMIN)
+<img width="1899" height="909" alt="image" src="https://github.com/user-attachments/assets/caad90e7-3d3e-408e-82cb-36dc5c0a3364" />
 
 Categories and Tags
 - Book categorization
