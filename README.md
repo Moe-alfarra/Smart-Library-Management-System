@@ -22,6 +22,15 @@ Authentication and Security
 - Secure password hashing using BCrypt (hashed password stored in database)
 - Protected REST API endpoints using Spring Security (API endpoint access based on role)
 
+Login/Registeration
+- User/Registeration (MEMER)
+- User Login (ADMIN / MEMBER)
+- Login Credential Validation
+- View Logged-in user profile
+<img width="1918" height="906" alt="image" src="https://github.com/user-attachments/assets/c0020de4-2acd-4095-bab1-4f385d526862" />
+<img width="1910" height="906" alt="image" src="https://github.com/user-attachments/assets/7b274282-ec93-4451-a911-b14042a08800" />
+<img width="1914" height="906" alt="image" src="https://github.com/user-attachments/assets/87e2bace-086a-4f2a-b2f0-a0027fc0c347" />
+
 Book Management
 - View available books
 - Add new books (ADMIN)
