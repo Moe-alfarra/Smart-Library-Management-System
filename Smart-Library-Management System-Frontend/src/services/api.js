@@ -1,9 +1,11 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://elza-glucosidic-johna.ngrok-free.dev/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
 
 const request = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token');
+
   const headers = {
     'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': '1',
     ...(token && { Authorization: `Bearer ${token}` }),
     ...options.headers,
   };
@@ -16,9 +18,10 @@ const request = async (endpoint, options = {}) => {
 
     if (!response.ok) {
       let errorMessage;
+
       try {
         const errorData = await response.json();
-        
+
         if (errorData.message) {
           errorMessage = errorData.message;
         } else if (errorData.error) {
@@ -45,14 +48,24 @@ const request = async (endpoint, options = {}) => {
           errorMessage = `Error ${response.status}: ${response.statusText}`;
         }
       }
-      
+
       throw new Error(errorMessage);
     }
 
-    return response.json();
+    const contentType = response.headers.get('content-type') || '';
+
+    if (contentType.includes('application/json')) {
+      return await response.json();
+    }
+
+    return await response.text();
   } catch (err) {
-    if (err.message.includes('Failed to fetch')) {
-      throw new Error('Cannot connect to backend. Make sure Spring Boot is running on http://localhost:8080');
+    if (
+      err.message.includes('Failed to fetch') ||
+      err.message.includes('NetworkError') ||
+      err.message.includes('Load failed')
+    ) {
+      throw new Error('Cannot connect to backend. Please make sure the backend server and ngrok tunnel are running.');
     }
     throw err;
   }
