@@ -88,7 +88,6 @@ User Management
 <img width="1917" height="905" alt="image" src="https://github.com/user-attachments/assets/0866398f-85c4-4a02-ab68-25c8503f36ef" />
 <img width="1899" height="907" alt="image" src="https://github.com/user-attachments/assets/9d2fd510-6858-4339-ab82-51f33bd60131" />
 <img width="1443" height="690" alt="image" src="https://github.com/user-attachments/assets/8451febc-0783-4ae9-96f8-97c27e45efd5" />
-<img width="1912" height="904" alt="image" src="https://github.com/user-attachments/assets/9276454f-8979-430b-9c50-3b85cce553dd" />
 
 
 Technology Stack
