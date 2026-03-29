@@ -1,4 +1,4 @@
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://elza-glucosidic-johna.ngrok-free.dev/api';
 
 const request = async (endpoint, options = {}) => {
   const token = localStorage.getItem('token');
