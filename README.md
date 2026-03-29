@@ -123,71 +123,68 @@ Running the Project Locally
 
 1. Clone the repository
 
-git clone https://github.com/Moe-alfarra/Smart-Library-Management-System.git
-cd Smart-Library-Management-System
+    git clone https://github.com/Moe-alfarra/Smart-Library-Management-System.git
+    cd Smart-Library-Management-System
 
 
 2. Setup PostgreSQL Database
 
-Create a PostgreSQL database before  running the backend (NOTE: Refer to the DB Design and Schema)
+    Create a PostgreSQL database before  running the backend (NOTE: Refer to the DB Design and Schema)
  
-You should have 5 tables:
-- Core Entities: users, books
-- Borrowing System: borrow_records (connects users with books many-to-many [M-N])
-- Reservation System: reservations (connects users with books many-to-many [M-N])
-- Book Metadata: book_tags (assigns tags to specific books 1-to-many [1-M]) 
+    You should have 5 tables:
+    - Core Entities: users, books
+    - Borrowing System: borrow_records (connects users with books many-to-many [M-N])
+    - Reservation System: reservations (connects users with books many-to-many [M-N])
+    - Book Metadata: book_tags (assigns tags to specific books 1-to-many [1-M]) 
 
-Update the backend configuration file:
+    Update the backend configuration file:
 
-Smart-Library-Management-System-Backend/src/main/resources/application.properties
+    Smart-Library-Management-System-Backend/src/main/resources/application.properties
 
-Example configuration:
-
-spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
-
-spring.datasource.username=postgres
-
-spring.datasource.password=yourpassword
+    Example configuration:
+ 
+    spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
+    spring.datasource.username=postgres
+    spring.datasource.password=yourpassword
 
 
-3. Run the Backend (Recommended: Using IntelliJ)
+4. Run the Backend (Recommended: Using IntelliJ)
 
-Navigate to the backend folder:
+    Navigate to the backend folder:
 
-cd Smart-Library-Management-System-Backend
+    cd Smart-Library-Management-System-Backend
 
-Run the Spring Boot application:
+    Run the Spring Boot application:
 
-./mvnw spring-boot:run or press Run if using IntelliJ
+    ./mvnw spring-boot:run or press Run if using IntelliJ
 
-The backend will start at:
+    The backend will start at:
 
-http://localhost:8080
+    http://localhost:8080
 
 
-4. Run the Frontend
+5. Run the Frontend
 
-Navigate to the frontend folder:
+    Navigate to the frontend folder:
 
-cd frontend
+    cd frontend
 
-Install dependencies:
+    Install dependencies:
 
-npm install
+    npm install
 
-Start the development server:
+    Start the development server:
 
-npm run dev
+    npm run dev
 
-The frontend will start at:
+    The frontend will start at:
 
-http://localhost:5173
+    http://localhost:5173
 
 
 API Overview
 ------------
 
-    Smart-Library-Management-System-frontend/
     Authentication
     
     POST /api/auth/login
