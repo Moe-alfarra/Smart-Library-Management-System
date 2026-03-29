@@ -144,7 +144,9 @@ Running the Project Locally
     Example configuration:
  
     spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
+    
     spring.datasource.username=postgres
+    
     spring.datasource.password=yourpassword
 
 
