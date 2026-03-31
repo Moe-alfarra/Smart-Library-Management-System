@@ -145,70 +145,115 @@ System Architecture
     PostgreSQL Database
 
 
-Running the Project Locally
----------------------------
+## Running the Project Locally
 
-1. Clone the repository
+### Clone the Repository
 
-    git clone https://github.com/Moe-alfarra/Smart-Library-Management-System.git
-    cd Smart-Library-Management-System
+```bash
+git clone https://github.com/Moe-alfarra/Smart-Library-Management-System.git
+cd Smart-Library-Management-System
+```
 
+---
 
-2. Setup PostgreSQL Database
+## Setup PostgreSQL Database
 
-    Create a PostgreSQL database before  running the backend (NOTE: Refer to the DB Design and Schema)
- 
-    You should have 5 tables:
-    - Core Entities: users, books
-    - Borrowing System: borrow_records (connects users with books many-to-many [M-N])
-    - Reservation System: reservations (connects users with books many-to-many [M-N])
-    - Book Metadata: book_tags (assigns tags to specific books 1-to-many [1-M]) 
+Create a PostgreSQL database before running the backend.
 
-    Update the backend configuration file:
+> **Note:** Refer to the **DB Design and Schema** section for details.
 
-    Smart-Library-Management-System-Backend/src/main/resources/application.properties
+Your database should contain the following **5 tables**:
 
-    Example configuration:
- 
-    spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
-    
-    spring.datasource.username=postgres
-    
-    spring.datasource.password=yourpassword
+### Core Entities
 
+* `users`
+* `books`
 
-4. Run the Backend (Recommended: Using IntelliJ)
+### Borrowing System
 
-    Navigate to the backend folder:
+* `borrow_records`
+  Connects users with books using a **many-to-many (M-N)** relationship.
 
-    cd Smart-Library-Management-System-Backend
+### Reservation System
 
-    Run the Spring Boot application:
+* `reservations`
+  Connects users with books using a **many-to-many (M-N)** relationship.
 
-    ./mvnw spring-boot:run or press Run if using IntelliJ
+### Book Metadata
 
-    The backend will start at:
+* `book_tags`
+  Assigns tags to specific books using a **one-to-many (1-M)** relationship.
 
-    http://localhost:8080
+---
 
+## Configure Backend Database Connection
 
-5. Run the Frontend
+Update the backend configuration file:
 
-    Navigate to the frontend folder:
+```
+Smart-Library-Management-System-Backend/src/main/resources/application.properties
+```
 
-    cd frontend
+Example configuration:
 
-    Install dependencies:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/library_db
+spring.datasource.username=postgres
+spring.datasource.password=yourpassword
+```
 
-    npm install
+---
 
-    Start the development server:
+## Run the Backend
 
-    npm run dev
+Navigate to the backend folder:
 
-    The frontend will start at:
+```bash
+cd Smart-Library-Management-System-Backend
+```
 
-    http://localhost:5173
+Run the Spring Boot application:
+
+```bash
+./mvnw spring-boot:run
+```
+
+If you are using **IntelliJ**, you can simply press the **Run** button on the main Spring Boot application class.
+
+The backend server will start at:
+
+```
+http://localhost:8080
+```
+
+---
+
+## Run the Frontend
+
+Navigate to the frontend folder:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+The frontend will start at:
+
+```
+http://localhost:5173
+```
+
 
 
 API Overview
